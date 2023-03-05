@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Sederhana</title>
+</head>
+<body>
+    <script language="Javascript">
+        function test() {
+            var calculate = document.form;
+            var x=eval(calculate.x.value);
+            var y=eval(calculate.y.value);
+            var pil=calculate.opt.value;
+            if (pil=="+") {
+                var z = x+y;
+            }else if (pil=="-") {
+                var z = x-y;
+            }else if (pil=="*") {
+                var z = x*y;
+            }else if (pil=="/") {
+                var z = x/y;
+            }
+            calculate.hasil.value=z;
+            calculate.x.value="";
+            calculate.y.value="";
+        }
+        function kosongform() {
+            document.form.reset();
+        }
+    </script>
+    <div align="center">
+        <h1>Kalkulator Sederhana</h1>
+        <form name="form" action="#">
+            <p>Bil 1 <input type="text" name="x"></p>
+            <p>Bil 2 <input type="text" name="y"></p>
+            <p>Hasil <input type="text" name="hasil" disabled="true"></p>
+            <p><select name="opt"></p>
+                <option value="+"> + </option>
+                <option value="-"> - </option>
+                <option value="*"> * </option>
+                <option value="/"> / </option>
+            </select>
+            <input type="button" value="=" onClick=test()>
+            <input type="button" value="CLEAR" onClick=kosongform()>
+        </form>
+    </div>
+</body>
+</html>
